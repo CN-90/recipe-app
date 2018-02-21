@@ -6,7 +6,7 @@ import { RecipeDetailComponent } from './components/recipes/recipe-detail/recipe
 import { NoRecipeComponent } from './components/recipes/no-recipe/no-recipe.component';
 
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   {path: '', redirectTo: 'recipes', pathMatch: 'full' },
   {path: 'recipes', component: RecipesComponent, children: [
     { path: "", component: NoRecipeComponent },
@@ -17,10 +17,10 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot(appRoutes)
   ],
   exports: [
-    RouterModule
+    // RouterModule
   ]
 })
 
