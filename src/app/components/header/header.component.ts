@@ -5,14 +5,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() toNavigate = new EventEmitter<string>()
   constructor() { }
 
   ngOnInit() {
   }
 
-  onNavigate(currentFeature: string){
-    this.toNavigate.emit(currentFeature);
-  }
+  
   
 }
