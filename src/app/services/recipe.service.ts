@@ -9,7 +9,7 @@ export class RecipeService {
   // recipeSelected = new Subject<Recipe>()
   recipeChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
+   private recipes: Recipe[] = [
     new Recipe('Terriyaki', "Sweet, delicious terriyaki chicken.",
     'http://del.h-cdn.co/assets/17/26/980x490/landscape-1498598755-teriyaki-chicken.jpg',
   [new Ingredient('Chicken Breasts', 6)]),
@@ -23,6 +23,11 @@ export class RecipeService {
 
   getRecipes(){
     return this.recipes.slice();
+  }
+
+  setRecipes(recipes: Recipe[]){
+    this.recipes = recipes;
+    this.recipeChanged.next(this.recipes.slice())
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]){
