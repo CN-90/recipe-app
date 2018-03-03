@@ -19,6 +19,8 @@ import { AppRouterModule, appRoutes } from './app-router.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from '@angular/http';
 import { ServerService } from './services/server.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ServerService } from './services/server.service';
     ShoppingEditComponent,
     DropdownDirective,
     NoRecipeComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
