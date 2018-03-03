@@ -21,6 +21,8 @@ import { HttpModule } from '@angular/http';
 import { ServerService } from './services/server.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { SigninComponent } from './auth/signin/signin.component';
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ShoppingListService, RecipeService, ServerService],
+  providers: [ShoppingListService, RecipeService, ServerService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

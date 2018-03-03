@@ -7,8 +7,15 @@
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input class="form-control" type="password" name="password" id="password" ngModel>
+        <input 
+          class="form-control" 
+          type="password" 
+          name="password" 
+          id="password"
+          #password="ngModel"
+          required minlength="6" ngModel>
       </div>
+      <div *ngIf="password.invalid && (password.touched || password.dirty)" class="alert alert-danger" role="alert">Password must be at least 6 characters.</div>
       <button type="submit" class="btn-btn-primary">Sign up</button>
     </form>
   </div>

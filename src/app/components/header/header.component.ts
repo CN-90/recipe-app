@@ -1,13 +1,18 @@
 import { ServerService } from './../../services/server.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'; 
 import { Response } from '@angular/http';
+import { AuthService } from '../../auth/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private serverService: ServerService) { }
+
+  constructor(
+    private serverService: ServerService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
   }
@@ -19,6 +24,10 @@ export class HeaderComponent implements OnInit {
 
   getRecipes(){
     this.serverService.getRecipes();
+  }
+
+  onLogout(){
+    this.authService.logout();
   }
 
   
