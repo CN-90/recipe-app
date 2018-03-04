@@ -21,13 +21,16 @@ export class AuthService {
         (response) => {
           firebase.auth().currentUser.getToken()
             .then(
-              (token:string) =>  this.token = token
+              (token:string) => { 
+                this.token = token
+                this.router.navigate(['/'])
+              }
             )
         }
       ).catch(
         err => console.log(err)
       )
-      this.router.navigate(['/'])
+      
   }
 
   getToken(){
