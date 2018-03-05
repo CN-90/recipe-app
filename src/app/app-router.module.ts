@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 
 export const appRoutes: Routes = [
-  {path: '', redirectTo: 'recipes', pathMatch: 'full' },
-  {path: 'shopping', component: ShoppingListComponent },
-  {path: 'signup', component: SignupComponent },
-  {path: 'signin', component: SigninComponent },
+  { path: '', component: HomeComponent },
+  { path: 'recipes', loadChildren: "./components/recipes/recipe.module#RecipeModule" },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
 ]
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   exports: [
-    RouterModule
+    RouterModule,
   ]
 })
 
