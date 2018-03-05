@@ -2,6 +2,8 @@ import { ServerService } from './../../services/server.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'; 
 import { Response } from '@angular/http';
 import { AuthService } from '../../auth/auth.service';
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -28,6 +30,10 @@ export class HeaderComponent implements OnInit {
 
   onLogout(){
     this.authService.logout();
+  }
+
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
   }
 
   
